@@ -1,6 +1,3 @@
-
-
-// src/App.js
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './component/common/Navbar';
@@ -29,6 +26,7 @@ function App() {
         <div className="content">
           <Routes>
             {/* Public Routes */}
+            <Route exact path="/" element={<HomePage />} />
             <Route exact path="/home" element={<HomePage />} />
             <Route exact path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />

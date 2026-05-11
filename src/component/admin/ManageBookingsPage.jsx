@@ -53,15 +53,17 @@ const ManageBookingsPage = () => {
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     return (
-        <div className='bookings-container'>
-            <h2>All Bookings</h2>
-            <div className='search-div'>
-                <label>Filter by Booking Number:</label>
+        <div className='bookings-container' style={{ maxWidth: '1400px', margin: '80px auto', padding: '0 5%' }}>
+            <h2 className="section-title" style={{ marginBottom: '40px' }}>Manage Bookings</h2>
+            
+            <div className='search-div' style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', gap: '16px', marginBottom: '40px', padding: '24px', background: 'var(--bg-surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-subtle)' }}>
+                <label style={{ fontSize: '14px', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Filter by Booking Number:</label>
                 <input
                     type="text"
                     value={searchTerm}
                     onChange={handleSearchChange}
                     placeholder="Enter booking number"
+                    style={{ width: 'auto', minWidth: '300px' }}
                 />
             </div>
 

@@ -62,23 +62,24 @@ const ManageRoomPage = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className='all-rooms'>
-      <h2>All Rooms</h2>
-      <div className='all-room-filter-div' style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <div className='filter-select-div'>
-          <label>Filter by Room Type:</label>
-          <select value={selectedRoomType} onChange={handleRoomTypeChange}>
-            <option value="">All</option>
-            {roomTypes.map((type) => (
-              <option key={type} value={type}>
-                {type}
-              </option>
-            ))}
-          </select>
-          <button className='add-room-button' onClick={() => navigate('/admin/add-room')}>
-            Add Room
+    <div className='all-rooms' style={{ maxWidth: '1400px', margin: '80px auto', padding: '0 5%' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '40px' }}>
+          <h2 className="section-title" style={{ margin: 0 }}>Manage Fleet</h2>
+          <button className='admin-button' onClick={() => navigate('/admin/add-room')} style={{ width: 'auto' }}>
+            + Add New Room
           </button>
-        </div>
+      </div>
+      
+      <div className='all-room-filter-div' style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', gap: '16px', marginBottom: '40px', padding: '24px', background: 'var(--bg-surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-subtle)' }}>
+        <label style={{ fontSize: '14px', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Filter by Room Type:</label>
+        <select value={selectedRoomType} onChange={handleRoomTypeChange} style={{ width: 'auto', minWidth: '200px' }}>
+          <option value="">All Types</option>
+          {roomTypes.map((type) => (
+            <option key={type} value={type}>
+              {type}
+            </option>
+          ))}
+        </select>
       </div>
 
       <RoomResult roomSearchResults={currentRooms} />
