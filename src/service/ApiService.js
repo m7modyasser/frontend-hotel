@@ -2,7 +2,7 @@ import axios from "axios"
 
 export default class ApiService {
 
-    static BASE_URL = "https://phegnhotel-production.up.railway.app"
+    static BASE_URL = import.meta.env.VITE_BASE_URL || ""
 
     static getHeader() {
         const token = localStorage.getItem("token");
