@@ -24,17 +24,18 @@ const FindBookingPage = () => {
     };
 
     return (
-        <div className="find-booking-page">
-            <h2>Find Booking</h2>
-            <div className="find-booking-search">
+        <div className="find-booking-page" style={{ maxWidth: '800px', margin: '80px auto', padding: '40px', background: 'var(--bg-surface)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-subtle)' }}>
+            <h2 className="section-title center" style={{ margin: '0 0 40px 0', fontSize: '32px' }}>Find Your Reservation</h2>
+            <div className="find-booking-search" style={{ display: 'flex', gap: '16px', marginBottom: '24px' }}>
                 <input
                     required
                     type="text"
                     placeholder="Enter your booking confirmation code"
                     value={confirmationCode}
                     onChange={(e) => setConfirmationCode(e.target.value)}
+                    style={{ flex: 1 }}
                 />
-                <button onClick={handleSearch} className="find-booking-button">Find</button>
+                <button onClick={handleSearch} className="find-booking-button book-now-button" style={{ width: 'auto' }}>Locate Booking</button>
             </div>
             {error && <p className="error-message">{error}</p>}
             {bookingDetails && (

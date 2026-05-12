@@ -58,8 +58,8 @@ const RoomSearch = ({ handleSearchResult }) => {
   };
 
   return (
-    <section>
-      <div className="search-container">
+    <section className="search-section-wrapper" style={{ margin: '0 auto', width: '100%' }}>
+      <div className="search-container" style={{ margin: '0 auto' }}>
         <div className="search-field">
           <label>Check-in Date</label>
           <DatePicker
